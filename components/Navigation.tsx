@@ -37,7 +37,7 @@ export default function Navigation() {
               className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
             >
               <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
-                Arigato Corp
+                {t("arigatoTitle")}
               </div>
             </NavigationLink>
             <NavigationLink
@@ -46,7 +46,7 @@ export default function Navigation() {
               className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
             >
               <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
-                CNC
+                {t("cncTitle")}
               </div>
             </NavigationLink>
           </div>

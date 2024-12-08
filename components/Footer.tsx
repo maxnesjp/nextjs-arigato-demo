@@ -1,4 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import Link from "next/link";
 
 type Props = {
   locale: string;
@@ -22,9 +23,9 @@ const Footer = async ({ locale }: Props) => {
             </li>
             <li>
               <strong>{t("email")}:</strong>{" "}
-              <a href="mailto:support@example.com" className="text-blue-400">
+              <Link href="mailto:support@example.com" className="text-blue-400">
                 support@example.com
-              </a>
+              </Link>
             </li>
             <li>
               <strong>{t("ourLocation")}:</strong> 123 Example Street, City,
@@ -41,44 +42,44 @@ const Footer = async ({ locale }: Props) => {
           <h4 className="font-bold text-lg mb-2">{t("information")}</h4>
           <ul className="mt-4">
             <li>
-              <a href="/about" className="hover:text-blue-400">
+              <Link href="/about" className="hover:text-blue-400">
                 {t("aboutUs")}
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/privacy-policy" className="hover:text-blue-400">
+              <Link href="/privacy-policy" className="hover:text-blue-400">
                 {t("privacyPolicy")}
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/terms" className="hover:text-blue-400">
+              <Link href="/terms" className="hover:text-blue-400">
                 {t("termsOfUse")}
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/career" className="hover:text-blue-400">
+              <Link href="/career" className="hover:text-blue-400">
                 {t("career")}
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/contact" className="hover:text-blue-400">
+              <Link href="/contact" className="hover:text-blue-400">
                 {t("contactUsLink")}
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/sitemap" className="hover:text-blue-400">
+              <Link href="/sitemap" className="hover:text-blue-400">
                 {t("sitemap")}
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/account" className="hover:text-blue-400">
+              <Link href="/account" className="hover:text-blue-400">
                 {t("myAccount")}
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/profile" className="hover:text-blue-400">
+              <Link href="/profile" className="hover:text-blue-400">
                 {t("profile")}
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

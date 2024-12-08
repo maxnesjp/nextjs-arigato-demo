@@ -5,13 +5,13 @@ type Props = {
   params: { locale: string };
 };
 
-export async function ArigatoCorpHome({ params }: Props) {
-  const { locale } = await params;
+const ArigatoCorpHome = async ({ params }: { params: Promise<Props> }) => {
+  const { locale } = (await params).params;
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: "Arigato" });
 
   return <div>{t("description")}</div>;
-}
+};
 
 export default ArigatoCorpHome;

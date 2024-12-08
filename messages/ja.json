@@ -19,7 +19,8 @@
     },
     "Navigation": {
       "home": "ホーム",
-      "pathnames": "パス名"
+      "arigatoTitle": "ありがとうコーポレーション",
+      "cncTitle": "中古工作機械"
     },
     "NotFoundPage": {
       "description": "ブラウザのアドレスバーを再確認するか、ナビゲーションを使用して既知のページに移動してください。",

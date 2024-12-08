@@ -1,17 +1,20 @@
-import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import PageLayout from "@/components/PageLayout";
 
 type Props = {
-  params: { locale: string };
+  locale: string;
 };
 
-export default async function IndexPage({ params }: Props) {
+export default async function IndexPage({
+  params,
+}: {
+  params: Promise<Props>;
+}) {
   // Enable static rendering
-  const { locale } = await params;
-  setRequestLocale(locale);
+  const l = (await params).locale;
+  setRequestLocale(l);
 
-  const t = await getTranslations({ locale, namespace: "IndexPage" });
+  const t = await getTranslations({ l, namespace: "IndexPage" });
 
   return (
     <PageLayout title={t("title")}>
