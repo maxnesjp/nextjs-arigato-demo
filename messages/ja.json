@@ -1,0 +1,88 @@
+{
+    "Error": {
+      "description": "<p>残念ながらエラーが発生しました。</p><p>訪問していたページを <retry>再読み込み</retry> してみてください。</p>",
+      "title": "問題が発生しました！"
+    },
+    "IndexPage": {
+      "description": "これは、Next.js App Router で <code>next-intl</code> を使用する基本的な例です。右上のロケールを変更して、コンテンツがどのように変化するかを試してみてください。",
+      "title": "next-intl の例"
+    },
+    "LocaleLayout": {
+      "title": "next-intl の例"
+    },
+    "LocaleSwitcher": {
+      "label": "言語を変更",
+      "locale": "{locale, select, ja {🇯🇵} en {🇺🇸} other {不明}}"
+    },
+    "Manifest": {
+      "name": "next-intl の例"
+    },
+    "Navigation": {
+      "home": "ホーム",
+      "pathnames": "パス名"
+    },
+    "NotFoundPage": {
+      "description": "ブラウザのアドレスバーを再確認するか、ナビゲーションを使用して既知のページに移動してください。",
+      "title": "ページが見つかりません"
+    },
+    "PageLayout": {
+      "links": {
+        "docs": {
+          "description": "公式ドキュメントで next-intl についてもっと学ぶ。",
+          "href": "https://next-intl-docs.vercel.app/",
+          "title": "ドキュメント"
+        },
+        "source": {
+          "description": "GitHub でこの例のソースコードをブラウズ。",
+          "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
+          "title": "ソースコード"
+        }
+      }
+    },
+    "Arigato": {
+      "description": "ありがとうコーポレーション",
+      "title": "会社名",
+      "machinery": [
+        {
+          "title": "掘削機",
+          "description": "トレンチの掘削、解体、重機の持ち運びに使用されます。",
+          "size": "大",
+          "availability": true
+        },
+        {
+          "title": "バックホー",
+          "description": "建設のために掘削と積み込みの機能を組み合わせた機械。",
+          "size": "中",
+          "availability": true
+        }
+      ]
+    },
+    "CNC": {
+      "description": "中古工作機や産業機械の高価買取・輸出専門総合商社",
+      "title": "cnc"
+    },
+    "Footer": {
+      "contactUs": "お問い合わせ",
+      "contactDescription": "サービスに関する詳細については、以下の方法でお問い合わせください。",
+      "phone": "電話番号",
+      "email": "メール",
+      "ourLocation": "所在地",
+      "workingHours": "営業時間",
+      "workingHoursDetails": "月曜日から金曜日 9:00 AM - 6:00 PM",
+      "information": "情報",
+      "aboutUs": "私たちについて",
+      "privacyPolicy": "プライバシーポリシー",
+      "termsOfUse": "利用規約",
+      "career": "キャリア",
+      "contactUsLink": "お問い合わせ",
+      "sitemap": "サイトマップ",
+      "myAccount": "マイアカウント",
+      "profile": "プロフィール",
+      "newsletter": "ニュースレター",
+      "newsletterDescription": "最新の割引情報や特別オファーを受け取るために、下記にメールアドレスを入力してニュースレターを購読してください。",
+      "subscribe": "購読する",
+      "followUs": "フォローする",
+      "followUsDescription": "私たちのソーシャルネットワークでフォローしてください"
+    }
+  }
+  
