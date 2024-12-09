@@ -11,10 +11,6 @@ export default function NavigationLink({
 }: ComponentProps<typeof Link>) {
   const pathname = usePathname();
 
-  // Log pathname and href for debugging
-  console.log("pathname:", pathname);
-  console.log("href:", href);
-
   // Normalize pathname (remove language prefix like /en/ or /ja/)
   const normalizedPathname =
     typeof pathname === "string" ? pathname.replace(/^\/[^/]+\//, "/") : "/"; // Default to "/" if pathname is not a string
@@ -24,9 +20,6 @@ export default function NavigationLink({
     typeof href === "string"
       ? href.replace(/^\/[^/]+\//, "/")
       : href?.pathname?.replace(/^\/[^/]+\//, "/") ?? "/"; // Safely handle UrlObject
-
-  console.log("normalizedPathname:", normalizedPathname);
-  console.log("normalizedHref:", normalizedHref);
 
   // Determine if the link is active
   const isActive = normalizedPathname === normalizedHref;

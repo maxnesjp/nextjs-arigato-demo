@@ -4,8 +4,8 @@
       "title": "問題が発生しました！"
     },
     "IndexPage": {
-      "description": "これは、Next.js App Router で <code>next-intl</code> を使用する基本的な例です。右上のロケールを変更して、コンテンツがどのように変化するかを試してみてください。",
-      "title": "next-intl の例"
+      "description": "Next.js App Router を使用した <code>Arigato</code> のデモ サイトへようこそ。",
+      "title": "こんにちは"
     },
     "LocaleLayout": {
       "title": "next-intl の例"

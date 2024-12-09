@@ -4,8 +4,8 @@
       "title": "Something went wrong!"
     },
     "IndexPage": {
-      "description": "This is a basic example that demonstrates the usage of <code>next-intl</code> with the Next.js App Router. Try changing the locale in the top right corner and see how the content changes.",
-      "title": "next-intl example"
+      "description": "Welcome to demo site for <code>Arigato</code> with the Next.js App Router.",
+      "title": "Hi"
     },
     "LocaleLayout": {
       "title": "next-intl example"

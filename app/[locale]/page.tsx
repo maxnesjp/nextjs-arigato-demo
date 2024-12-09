@@ -1,30 +1,23 @@
-import { getTranslations, setRequestLocale } from "next-intl/server";
-import PageLayout from "@/components/PageLayout";
+import { getTranslations } from "next-intl/server";
 
-type Props = {
+interface Props {
   locale: string;
-};
+}
 
 export default async function IndexPage({
   params,
 }: {
   params: Promise<Props>;
 }) {
-  // Enable static rendering
-  const l = (await params).locale;
-  setRequestLocale(l);
+  // Resolve params and get locale
+  const { locale } = await params;
+  console.log("Locale:", locale);
 
-  const t = await getTranslations({ l, namespace: "IndexPage" });
+  // Fetch translations for the IndexPage
+  const t = await getTranslations("IndexPage");
+  const title = t("title");
+  console.log("Fetched title:", title);
 
-  return (
-    <PageLayout title={t("title")}>
-      <p className="max-w-[590px]">
-        {t.rich("description", {
-          code: (chunks) => (
-            <code className="font-mono text-white">{chunks}</code>
-          ),
-        })}
-      </p>
-    </PageLayout>
-  );
+  // Pass the title as params to PageLayout after resolving it
+  return <h1>pp</h1>;
 }

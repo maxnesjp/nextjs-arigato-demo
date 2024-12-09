@@ -16,18 +16,14 @@ type Props = {
 export default async function BaseLayout({ children, locale }: Props) {
   // Providing all messages to the client
   // side is the easiest way to get started
-  const c = await locale;
   const messages = await getMessages();
 
   return (
-    <html className="h-full" lang={c}>
-      <body
-        className={clsx(inter.className, "flex h-full flex-col bg-slate-900")}
-      >
+    <html className="h-full" lang={locale}>
+      <body className={clsx(inter.className, "flex h-full flex-col")}>
         <NextIntlClientProvider messages={messages}>
           <Navigation />
-
-          <main className="flex-grow px-5 py-2">{children}</main>
+          {children}
           <Footer locale={locale} />
         </NextIntlClientProvider>
       </body>
