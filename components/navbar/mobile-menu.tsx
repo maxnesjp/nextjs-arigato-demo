@@ -1,14 +1,11 @@
 "use client";
 
 import { Dialog, Transition } from "@headlessui/react";
-import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { Fragment, Suspense, useEffect, useState } from "react";
 
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Menu } from "@/lib/arigato/types";
 import Search, { SearchSkeleton } from "./search";
-import { MenuItems } from "@/lib/constants";
 import NavigationLink from "../NavigationLink";
 import LocaleSwitcher from "../LocaleSwitcher";
 
@@ -18,7 +15,6 @@ export default function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false);
   const openMobileMenu = () => setIsOpen(true);
   const closeMobileMenu = () => setIsOpen(false);
-  const menu = MenuItems;
 
   useEffect(() => {
     const handleResize = () => {
@@ -80,24 +76,6 @@ export default function MobileMenu() {
                     <Search />
                   </Suspense>
                 </div>
-                {menu.length ? (
-                  <ul className="flex w-full flex-col">
-                    {menu.map((item: Menu) => (
-                      <li
-                        className="py-2 text-xl text-black transition-colors hover:text-neutral-500 dark:text-white"
-                        key={item.title}
-                      >
-                        <Link
-                          href={item.path}
-                          prefetch={true}
-                          onClick={closeMobileMenu}
-                        >
-                          {item.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
                 <ul className="flex w-full flex-col">
                   <li className="py-2 text-xl text-black transition-colors hover:text-neutral-500 dark:text-white">
                     <NavigationLink
@@ -115,7 +93,9 @@ export default function MobileMenu() {
                       prefetch={true}
                       className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
                       onClick={closeMobileMenu}
-                    ></NavigationLink>
+                    >
+                      CNC
+                    </NavigationLink>
                   </li>
                 </ul>
                 <LocaleSwitcher />
