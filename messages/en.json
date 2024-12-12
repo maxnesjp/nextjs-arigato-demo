@@ -8,7 +8,7 @@
       "title": "Hi"
     },
     "LocaleLayout": {
-      "title": "next-intl example"
+      "title": "Arigato Demo"
     },
     "LocaleSwitcher": {
       "label": "Change language",
@@ -45,16 +45,70 @@
       "title": "company name",
       "machinery": [
         {
+          "id": 1,
           "title": "Excavator",
           "description": "Used for digging trenches, demolition, and heavy lifting.",
           "size": "Large",
-          "availability": true
+          "availability": true,
+          "image": "/images/escavator.jpeg",
+          "dimensions": {
+            "length": "10.5m",
+            "width": "3.5m",
+            "height": "3.7m"
+          },
+          "weight": "20,000 kg",
+          "power": "150 kW",
+          "engineType": "Diesel",
+          "maxDiggingDepth": "7.0m",
+          "bucketCapacity": "1.2 m³",
+          "operatingPressure": "35 MPa",
+          "maxSpeed": "5.5 km/h",
+          "fuelCapacity": "400 liters",
+          "hydraulicSystemCapacity": "200 liters",
+          "year": 2022,
+          "country": "Japan",
+          "manufacturer": "Komatsu",
+          "price": "$150,000",
+          "warranty": "2 years / 2000 hours",
+          "features": [
+            "360-degree rotation",
+            "Automatic lubrication system",
+            "Heavy-duty undercarriage",
+            "Advanced hydraulic control"
+          ]
         },
         {
+          "id": 2,
           "title": "Backhoe",
           "description": "Combines digging and loading capabilities for construction.",
           "size": "Medium",
-          "availability": true
+          "availability": true,
+          "image": "/images/backhoe.jpeg",
+          "dimensions": {
+            "length": "6.0m",
+            "width": "2.3m",
+            "height": "2.9m"
+          },
+          "weight": "8,000 kg",
+          "power": "70 kW",
+          "engineType": "Diesel",
+          "maxDiggingDepth": "4.5m",
+          "bucketCapacity": "0.8 m³",
+          "operatingPressure": "25 MPa",
+          "maxSpeed": "40 km/h",
+          "fuelCapacity": "150 liters",
+          "hydraulicSystemCapacity": "100 liters",
+          "year": 2023,
+          "country": "USA",
+          "manufacturer": "Caterpillar",
+          "price": "$85,000",
+          "warranty": "1 year / 1000 hours",
+          "features": [
+            "Four-wheel drive",
+            "Extendable dipper",
+            "Loader bucket with quick-release system",
+            "Cab with air conditioning"
+          ]
         }
       ]
     },

@@ -62,6 +62,36 @@ export type ProductOption = {
   values: string[];
 };
 
+export type Machinery = {
+  id: number;
+  title: string;
+  description: string;
+  size: string;
+  availability: boolean;
+  image: string;
+  dimensions: {
+    length: string;
+    width: string;
+    height: string;
+  };
+  weight: string;
+  power: string;
+  engineType: string;
+  maxDiggingDepth: string;
+  bucketCapacity: string;
+  operatingPressure: string;
+  maxSpeed: string;
+  fuelCapacity: string;
+  hydraulicSystemCapacity: string;
+  year: number;
+  country: string;
+  manufacturer: string;
+  price: string;
+  warranty: string;
+  features: string[];
+};
+
+
 export type ProductVariant = {
   id: string;
   title: string;

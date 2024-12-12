@@ -13,6 +13,10 @@ export const routing = defineRouting({
     '/cnc': {
       en: '/cnc',
       ja: '/cnc'
+    },
+    '/products': {
+      en: '/products',
+      ja: '/products'
     }
   }
 });
