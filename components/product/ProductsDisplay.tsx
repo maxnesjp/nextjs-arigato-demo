@@ -2,15 +2,19 @@ import React from "react";
 import Image from "next/image";
 import { Machinery } from "@/lib/arigato/types";
 import Link from "next/link";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 
 interface Props {
-  products: Machinery[];
   locale: string;
 }
 
 const ProductsDisplay = async ({ params }: { params: Props }) => {
-  const { locale, products } = await params;
+  const { locale } = await params;
+  const machineryData: { machinery: Machinery[] } = await import(
+    `/messages/${locale}/machinery.json`
+  );
+  const products: Machinery[] = machineryData.machinery;
+  const t = await getTranslations({ locale, namespace: "Jay" });
   setRequestLocale(locale);
 
   return (
@@ -28,11 +32,13 @@ const ProductsDisplay = async ({ params }: { params: Props }) => {
             <h2 className="text-xl font-semibold mb-2">{item.title}</h2>
             <p className="text-gray-700 mb-2">{item.description}</p>
             <p className="text-sm text-gray-500 mb-2">
-              <strong>Size:</strong> {item.size}
+              <strong>{t("labels.size")}:</strong> {item.size}
             </p>
             <p className="text-sm text-gray-500">
-              <strong>Availability:</strong>{" "}
-              {item.availability ? "✅ Available" : "❌ Out of Stock"}
+              <strong>{t("labels.availability")}:</strong>{" "}
+              {item.availability
+                ? "✅ " + t("labels.available")
+                : "❌ " + t("labels.notAvailable")}
             </p>
           </div>
         </Link>

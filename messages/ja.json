@@ -19,7 +19,7 @@
     },
     "Navigation": {
       "home": "ホーム",
-      "arigatoTitle": "ありがとうコーポレーション",
+      "jayTitle": "ありがとうコーポレーション",
       "cncTitle": "中古工作機械"
     },
     "NotFoundPage": {
@@ -40,82 +40,43 @@
         }
       }
     },
-    "Arigato": {
+    "Jay": {
         "description": "ありがとうコーポレーション",
         "title": "会社名",
-        "machinery": [
-          {
-            "id": 1,
-            "title": "掘削機",
-            "description": "トレンチの掘削、解体、重機の持ち運びに使用されます。",
-            "size": "大",
-            "availability": true,
-            "image": "/images/escavator.jpeg",
-            "dimensions": {
-              "length": "10.5m",
-              "width": "3.5m",
-              "height": "3.7m"
-            },
-            "weight": "20,000 kg",
-            "power": "150 kW",
-            "engineType": "ディーゼル",
-            "maxDiggingDepth": "7.0m",
-            "bucketCapacity": "1.2 m³",
-            "operatingPressure": "35 MPa",
-            "maxSpeed": "5.5 km/h",
-            "fuelCapacity": "400 リットル",
-            "hydraulicSystemCapacity": "200 リットル",
-            "year": 2022,
-            "country": "日本",
-            "manufacturer": "コマツ",
-            "price": "150,000ドル",
-            "warranty": "2年 / 2000時間",
-            "features": [
-              "360度回転",
-              "自動潤滑システム",
-              "重機用アンダキャリッジ",
-              "高度な油圧制御"
-            ]
-          },
-          {
-            "id": 2,
-            "title": "バックホー",
-            "description": "建設のために掘削と積み込みの機能を組み合わせた機械。",
-            "size": "中",
-            "availability": true,
-            "image": "/images/backhoe.jpeg",
-            "dimensions": {
-              "length": "6.0m",
-              "width": "2.3m",
-              "height": "2.9m"
-            },
-            "weight": "8,000 kg",
-            "power": "70 kW",
-            "engineType": "ディーゼル",
-            "maxDiggingDepth": "4.5m",
-            "bucketCapacity": "0.8 m³",
-            "operatingPressure": "25 MPa",
-            "maxSpeed": "40 km/h",
-            "fuelCapacity": "150 リットル",
-            "hydraulicSystemCapacity": "100 リットル",
-            "year": 2023,
-            "country": "アメリカ",
-            "manufacturer": "キャタピラー",
-            "price": "85,000ドル",
-            "warranty": "1年 / 1000時間",
-            "features": [
-              "四輪駆動",
-              "伸縮式アーム",
-              "クイックリリース式ローダーバケット",
-              "エアコン付きキャビン"
-            ]
-          }
-        ]
-      },    
+        "labels": {
+          "size": "サイズ",
+          "availability": "在庫状況",
+          "available": "在庫あり",
+          "notAvailable": "在庫切れ",
+          "dimensions": "寸法",
+          "weight": "重量",
+          "power": "出力",
+          "engineType": "エンジンタイプ",
+          "maxDiggingDepth": "最大掘削深さ",
+          "bucketCapacity": "バケット容量",
+          "operatingPressure": "作動圧力",
+          "maxSpeed": "最高速度",
+          "fuelCapacity": "燃料容量",
+          "hydraulicSystemCapacity": "油圧システム容量",
+          "year": "年",
+          "country": "国",
+          "manufacturer": "メーカー",
+          "price": "価格",
+          "warranty": "保証",
+          "features": "特徴"
+        }    
+    },    
     "CNC": {
       "description": "中古工作機や産業機械の高価買取・輸出専門総合商社",
       "title": "cnc"
     },
+    "Filters": {"items": [
+        { "title": "ジェイ", "path": "jay"},
+        { "title": "CNC", "path": "cnc"},
+        { "title": "カテゴリー 3", "path": "c-3"},
+        { "title": "カテゴリー 4", "path": "c-4"},
+        { "title": "カテゴリー 5", "path": "c-5"}
+    ]},
     "Footer": {
       "contactUs": "お問い合わせ",
       "contactDescription": "サービスに関する詳細については、以下の方法でお問い合わせください。",

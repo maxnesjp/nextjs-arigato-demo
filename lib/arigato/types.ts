@@ -64,6 +64,7 @@ export type ProductOption = {
 
 export type Machinery = {
   id: number;
+  category: string;
   title: string;
   description: string;
   size: string;
@@ -90,6 +91,13 @@ export type Machinery = {
   warranty: string;
   features: string[];
 };
+
+export type ProductDetailsLabelValue =  {
+  productDetails: {
+    label: string;
+    value: string | number | string[];
+  }[];
+}
 
 
 export type ProductVariant = {

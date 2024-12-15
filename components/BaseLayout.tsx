@@ -24,7 +24,7 @@ export default async function BaseLayout({ children, locale }: Props) {
         <NextIntlClientProvider messages={messages}>
           <Navigation />
           {children}
-          <Footer locale={locale} />
+          <Footer />
         </NextIntlClientProvider>
       </body>
     </html>

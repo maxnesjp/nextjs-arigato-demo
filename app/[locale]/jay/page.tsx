@@ -12,8 +12,7 @@ const ArigatoCorpHome = async ({ params }: { params: Promise<Props> }) => {
   const l = (await params).locale;
   setRequestLocale(l);
 
-  const t = await getTranslations({ l, namespace: "Arigato" });
-  const machinery: Machinery[] = t.raw("machinery");
+  const t = await getTranslations({ l, namespace: "Jay" });
 
   return (
     <ProductsListScreenLayout>
@@ -22,7 +21,6 @@ const ArigatoCorpHome = async ({ params }: { params: Promise<Props> }) => {
         <p className="text-gray-600 mb-6">{t("description")}</p>
         <ProductsDisplay
           params={{
-            products: machinery,
             locale: l,
           }}
         />

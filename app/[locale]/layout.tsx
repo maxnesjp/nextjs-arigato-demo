@@ -32,5 +32,9 @@ export default async function LocaleLayout({ children, params }: Props) {
   // Enable static rendering
   setRequestLocale(locale);
 
-  return <BaseLayout locale={locale}>{children}</BaseLayout>;
+  return (
+    <BaseLayout locale={locale}>
+      <div className="pt-3">{children}</div>
+    </BaseLayout>
+  );
 }

@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Link from "next/link";
 
@@ -5,10 +6,8 @@ type Props = {
   locale: string;
 };
 
-const Footer = async ({ locale }: Props) => {
-  const l = await locale;
-  setRequestLocale(l);
-  const t = await getTranslations({ l, namespace: "Footer" });
+const Footer = () => {
+  const t = useTranslations("Footer");
 
   return (
     <footer className="text-sm text-neutral-500 dark:text-neutral-400 mt-auto py-8 bg-gray-800 text-white">

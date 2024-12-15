@@ -6,13 +6,13 @@ export const routing = defineRouting({
   defaultLocale: 'en',
   pathnames: {
     '/': '/',
-    '/arigatoCorp': {
-      en: '/arigatoCorp',
-      ja: '/arigatoCorp'
+    '/search/jay': {
+      en: '/search/jay',
+      ja: '/search/jay'
     }, 
-    '/cnc': {
-      en: '/cnc',
-      ja: '/cnc'
+    '/search/cnc': {
+      en: '/search/cnc',
+      ja: '/search/cnc'
     },
     '/products': {
       en: '/products',

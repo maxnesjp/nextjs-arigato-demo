@@ -32,16 +32,16 @@ export default function Navigation() {
               </div>
             </NavigationLink>
             <NavigationLink
-              href="/arigatoCorp"
+              href="/search/jay"
               prefetch={true}
               className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
             >
               <div className="ml-2 flex-none text-sm font-medium uppercase md:hidden lg:block">
-                {t("arigatoTitle")}
+                {t("jayTitle")}
               </div>
             </NavigationLink>
             <NavigationLink
-              href="/cnc"
+              href="/search/cnc"
               prefetch={true}
               className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
             >
