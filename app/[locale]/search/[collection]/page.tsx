@@ -7,69 +7,99 @@ import { defaultSort, sorting } from "@/lib/constants";
 import { ListItem } from "@/components/filter";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Machinery } from "@/lib/arigato/types";
+import ProductsDisplay from "@/components/product/ProductsDisplay";
+import ProductsListScreenLayout from "@/components/ProductsListScreenLayout";
 
-export async function generateMetadata(): Promise<Metadata> {
+type Props = {
+  locale: Promise<string>;
+  category: Promise<{ collection: string }>;
+};
+
+type Category = {
+  title: string;
+  path: string;
+};
+
+export async function generateMetadata(props: {
+  params: Promise<{ locale: string; collection: string }>;
+}): Promise<Metadata> {
+  const { locale, collection } = await props.params;
+
+  const t = await getTranslations({
+    locale: locale,
+    namespace: "Filters",
+  });
+
+  const items: Category[] = t.raw("items");
+
+  // If collections are empty, return notFound
+  console.log(items.length);
+  if (items.length === 0) return notFound();
+
+  // Find the collection matching the category
+  const currentCategory = items.find((m) => m.path === collection);
+  console.log(currentCategory);
+  if (!currentCategory) return notFound();
+
   return {
-    title: "Default Title",
+    title: currentCategory.title || "Default Title",
   };
 }
 
+type Props2 = {
+  title: string;
+  searchParams?: { [key: string]: string | string[] | undefined };
+  locale: string;
+};
+
 export default async function CategoryPage(props: {
-  params: Promise<{ collection: string }>;
+  params: Promise<{ locale: string; collection: string }>;
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  const searchParams = await props.searchParams;
-  const params = await props.params;
-  const { sort } = searchParams as { [key: string]: string };
+  const { locale, collection } = await props.params;
+  const searchParams = await props;
+  const t = await getTranslations({ locale, namespace: "Jay" });
+
+  // Debugging logs
+  //console.log("Params in CategoryPage:", await props.params);
+
+  const { sort } = searchParams as unknown as { [key: string]: string };
   const { sortKey, reverse } =
     sorting.find((item) => item.slug === sort) || defaultSort;
-  const products = [
-    {
-      id: 1,
-      category: "jay",
-      title: "Excavator",
-      description: "Used for digging trenches, demolition, and heavy lifting.",
-      size: "Large",
-      availability: true,
-      image: "/images/escavator.jpeg",
-      dimensions: {
-        length: "10.5m",
-        width: "3.5m",
-        height: "3.7m",
-      },
-      weight: "20,000 kg",
-      power: "150 kW",
-      engineType: "Diesel",
-      maxDiggingDepth: "7.0m",
-      bucketCapacity: "1.2 m³",
-      operatingPressure: "35 MPa",
-      maxSpeed: "5.5 km/h",
-      fuelCapacity: "400 liters",
-      hydraulicSystemCapacity: "200 liters",
-      year: 2022,
-      country: "Japan",
-      manufacturer: "Komatsu",
-      price: "$150,000",
-      warranty: "2 years / 2000 hours",
-      features: [
-        "360-degree rotation",
-        "Automatic lubrication system",
-        "Heavy-duty undercarriage",
-        "Advanced hydraulic control",
-      ],
-    },
-  ];
 
+  let machineryData = await import(`/messages/${locale}/machinery.json`);
+
+  const products: Machinery[] = machineryData.machinery;
+  //console.log(products);
+  // console.log(params.collection);
+  const productsFromCurrentCategory: Machinery[] = products.filter(
+    (m) => m.category == collection
+  );
+  //console.log(productsFromCurrentCategory);
+
+  // Render the results
   return (
-    <section>
-      {products.length === 0 ? (
-        <p className="py-3 text-lg">{`No products found in this collection`}</p>
-      ) : (
-        <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          <ProductGridItems products={products} />
-        </Grid>
-      )}
-    </section>
+    <div className="p-6 max-w-5xl mx-auto">
+      <h1 className="text-3xl font-bold mb-4">{t("title")}</h1>
+      <p className="text-gray-600 mb-6">{t("description")}</p>
+      <ProductsDisplay
+        params={{
+          locale: locale,
+        }}
+      />
+      <section>
+        {productsFromCurrentCategory.length === 0 ? (
+          <p className="py-3 text-lg">{`No products found in this collection`}</p>
+        ) : (
+          <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            <ProductGridItems
+              products={productsFromCurrentCategory}
+              locale={locale}
+            />
+          </Grid>
+        )}
+      </section>
+    </div>
   );
 }
 

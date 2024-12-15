@@ -18,8 +18,10 @@ export const dynamic = "force-dynamic";
 
 export default async function SearchPage(props: {
   searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
+  params: Promise<{ locale: string }>;
 }) {
   const searchParams = await props.searchParams;
+  const { locale } = await props.params;
   // Set the locale for translations
 
   const { sort, q: searchValue } = searchParams as { [key: string]: string };
@@ -76,7 +78,7 @@ export default async function SearchPage(props: {
       ) : null}
       {products.length > 0 ? (
         <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          <ProductGridItems products={products} />
+          <ProductGridItems products={products} locale={locale} />
         </Grid>
       ) : null}
     </>

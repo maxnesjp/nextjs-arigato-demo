@@ -1,10 +1,9 @@
 import clsx from "clsx";
 import { Suspense } from "react";
-import { getTranslations, setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import FilterList, { ListItem } from "../filter";
 
-async function CollectionList() {
+function CollectionList() {
   const t = useTranslations("Filters");
   const collections: ListItem[] = Array.isArray(t.raw("items"))
     ? t.raw("items")
@@ -16,7 +15,7 @@ const skeleton = "mb-3 h-4 w-5/6 animate-pulse rounded";
 const activeAndTitles = "bg-neutral-800 dark:bg-neutral-300";
 const items = "bg-neutral-400 dark:bg-neutral-700";
 
-export default async function Collections() {
+export default function Collections() {
   return (
     <Suspense
       fallback={

@@ -14,9 +14,9 @@ export const routing = defineRouting({
       en: '/search/cnc',
       ja: '/search/cnc'
     },
-    '/products': {
-      en: '/products',
-      ja: '/products'
+    '/product/:id': {
+      en: '/product/:id',
+      ja: '/product/:id'
     }
   }
 });

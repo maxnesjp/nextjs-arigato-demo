@@ -2,11 +2,15 @@ import Grid from "./grid";
 import { GridTileImage } from "./grid/tile";
 import { Machinery, Product } from "@/lib/arigato/types";
 import Link from "next/link";
+import NavigationLink from "./NavigationLink";
+import { getPathname } from "@/i18n/routing";
 
 export default function ProductGridItems({
   products,
+  locale,
 }: {
   products: Machinery[];
+  locale: string;
 }) {
   return (
     <>
@@ -14,7 +18,7 @@ export default function ProductGridItems({
         <Grid.Item key={product.id} className="animate-fadeIn">
           <Link
             className="relative inline-block h-full w-full"
-            href={`/product/${product.id}`}
+            href={`/${locale}/product/${product.id}`} // Directly use template string
             prefetch={true}
           >
             <GridTileImage
