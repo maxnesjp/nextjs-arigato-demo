@@ -12,7 +12,7 @@ export default function Navigation() {
   const t = useTranslations("Navigation");
 
   return (
-    <div className="text-sm text-neutral-500 dark:text-neutral-400 bg-gray-800 text-white">
+    <div className="text-sm dark:text-neutral-400 bg-gray-800 text-white">
       <nav className="relative flex items-center justify-between p-4 lg:px-6">
         <div className="block flex-none md:hidden">
           <Suspense fallback={null}>

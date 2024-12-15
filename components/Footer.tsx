@@ -10,7 +10,7 @@ const Footer = () => {
   const t = useTranslations("Footer");
 
   return (
-    <footer className="text-sm text-neutral-500 dark:text-neutral-400 mt-auto py-8 bg-gray-800 text-white">
+    <footer className="text-sm dark:text-neutral-400 mt-auto py-8 bg-gray-800 text-white">
       <div className="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Contact Us Section */}
         <div>

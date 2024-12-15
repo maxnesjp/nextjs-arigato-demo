@@ -8,89 +8,65 @@ import { ListItem } from "@/components/filter";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Machinery } from "@/lib/arigato/types";
 
-type Props = {
-  locale: Promise<string>;
-  category: Promise<{ collection: string }>;
-};
-
-export async function generateMetadata(props: Props): Promise<Metadata> {
-  const { locale, category } = await props;
-
-  // Resolve both promises
-  const resolvedLocale = await locale;
-  const resolvedCategory = await category;
-
-  if (!resolvedCategory || !resolvedCategory.collection) {
-    return notFound();
-  }
-
-  const t = await getTranslations({
-    locale: resolvedLocale,
-    namespace: "Filters",
-  });
-
-  const collection: ListItem[] = Array.isArray(t.raw("items"))
-    ? t.raw("items")
-    : [];
-
-  // If collections are empty, return notFound
-  if (collection.length === 0) return notFound();
-
-  // Find the collection matching the category
-  const currentCategory = collection.find(
-    (m) => m.title === resolvedCategory.collection
-  );
-
-  if (!currentCategory) return notFound();
-
+export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: currentCategory.title || "Default Title",
+    title: "Default Title",
   };
 }
 
-type Props2 = {
-  title: string;
-  searchParams?: { [key: string]: string | string[] | undefined };
-  locale: string;
-};
-
-export default async function CategoryPage({
-  params,
-}: {
-  params: Promise<Props2>;
+export default async function CategoryPage(props: {
+  params: Promise<{ collection: string }>;
+  searchParams?: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
-  // Resolve all promises
-  console.log("123");
-  const { title, searchParams = {}, locale } = await params;
-
-  // Ensure searchParams has a default value to prevent destructuring errors
-  const { sort = "" } = searchParams as { [key: string]: string };
-
+  const searchParams = await props.searchParams;
+  const params = await props.params;
+  const { sort } = searchParams as { [key: string]: string };
   const { sortKey, reverse } =
     sorting.find((item) => item.slug === sort) || defaultSort;
+  const products = [
+    {
+      id: 1,
+      category: "jay",
+      title: "Excavator",
+      description: "Used for digging trenches, demolition, and heavy lifting.",
+      size: "Large",
+      availability: true,
+      image: "/images/escavator.jpeg",
+      dimensions: {
+        length: "10.5m",
+        width: "3.5m",
+        height: "3.7m",
+      },
+      weight: "20,000 kg",
+      power: "150 kW",
+      engineType: "Diesel",
+      maxDiggingDepth: "7.0m",
+      bucketCapacity: "1.2 m³",
+      operatingPressure: "35 MPa",
+      maxSpeed: "5.5 km/h",
+      fuelCapacity: "400 liters",
+      hydraulicSystemCapacity: "200 liters",
+      year: 2022,
+      country: "Japan",
+      manufacturer: "Komatsu",
+      price: "$150,000",
+      warranty: "2 years / 2000 hours",
+      features: [
+        "360-degree rotation",
+        "Automatic lubrication system",
+        "Heavy-duty undercarriage",
+        "Advanced hydraulic control",
+      ],
+    },
+  ];
 
-  // Import machinery data with proper error handling
-  let machineryData: { machinery: Machinery[] };
-  try {
-    machineryData = await import(`/messages/${locale}/machinery.json`);
-  } catch (error) {
-    console.error("Error importing machinery data:", error);
-    return notFound(); // Return notFound on failure
-  }
-
-  const products: Machinery[] = machineryData.machinery;
-  const productsFromCurrentCategory: Machinery[] = products.filter(
-    (m) => m.title === title
-  );
-
-  // Render the results
   return (
     <section>
-      {productsFromCurrentCategory.length === 0 ? (
+      {products.length === 0 ? (
         <p className="py-3 text-lg">{`No products found in this collection`}</p>
       ) : (
         <Grid className="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          <ProductGridItems products={productsFromCurrentCategory} />
+          <ProductGridItems products={products} />
         </Grid>
       )}
     </section>
