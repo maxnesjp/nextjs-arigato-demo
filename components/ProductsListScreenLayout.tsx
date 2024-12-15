@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import FilterList from "./filter";
+import FilterList from "./search/filter";
 import { sorting } from "@/lib/constants";
 import Collections from "./search/collections";
 

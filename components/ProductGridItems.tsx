@@ -1,9 +1,7 @@
 import Grid from "./grid";
 import { GridTileImage } from "./grid/tile";
-import { Machinery, Product } from "@/lib/arigato/types";
+import { Machinery } from "@/lib/arigato/types";
 import Link from "next/link";
-import NavigationLink from "./NavigationLink";
-import { getPathname } from "@/i18n/routing";
 
 export default function ProductGridItems({
   products,
@@ -23,6 +21,10 @@ export default function ProductGridItems({
           >
             <GridTileImage
               alt={product.title}
+              label={{
+                title: product.title,
+                availability: product.availability,
+              }}
               src={product.image}
               fill
               sizes="(min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw"

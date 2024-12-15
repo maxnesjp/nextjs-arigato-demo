@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { Suspense } from "react";
 import { useTranslations } from "next-intl";
-import FilterList, { ListItem } from "../filter";
+import FilterList, { ListItem } from "./filter";
 
 function CollectionList() {
   const t = useTranslations("Filters");

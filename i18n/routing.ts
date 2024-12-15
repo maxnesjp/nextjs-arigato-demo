@@ -17,6 +17,10 @@ export const routing = defineRouting({
     '/product/:id': {
       en: '/product/:id',
       ja: '/product/:id'
+    },
+    "/search": {
+      en: '/search',
+      ja: '/search'
     }
   }
 });

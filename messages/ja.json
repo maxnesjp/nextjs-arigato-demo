@@ -4,23 +4,73 @@
       "title": "問題が発生しました！"
     },
     "IndexPage": {
-      "description": "Next.js App Router を使用した <code>Arigato</code> のデモ サイトへようこそ。",
-      "title": "こんにちは"
+      "title": "ありがとう株式会社へようこそ",
+      "description": "ありがとう株式会社は、ソフトウェア開発、ITソリューション、イノベーションに特化したリーディングテック企業です。私たちは、世界中の企業に優れたサービスと製品を提供することを目指しています。",
+      "companyInfo": {
+        "name": "ありがとう株式会社",
+        "industry": "テクノロジー",
+        "established": "2010年",
+        "headquarters": "日本、東京",
+        "mission": "ビジネスを支援する最先端のITソリューションを提供し、革新を追求する。",
+        "services": [
+          "カスタムソフトウェア開発",
+          "クラウドソリューション",
+          "AI & 機械学習",
+          "モバイルアプリ開発",
+          "ウェブ開発"
+        ],
+        "team": {
+          "total": 150,
+          "departments": [
+            "ソフトウェアエンジニアリング",
+            "ビジネス開発",
+            "営業・マーケティング",
+            "カスタマーサポート"
+          ]
+        },
+        "clients": [
+          "テックイノベーション株式会社",
+          "グローバルソリューション株式会社",
+          "サイバーセック企業",
+          "スマートテック株式会社"
+        ]
+      },
+      "contact": {
+        "email": "contact@arigatocorp.com",
+        "phone": "+81 3 1234 5678",
+        "address": "渋谷、東京、日本"
+      },
+      "labels": {
+        "companyInfo": {
+          "name": "会社名",
+          "industry": "業界",
+          "established": "設立年",
+          "headquarters": "本社所在地",
+          "mission": "ミッション"
+        },
+        "services": "サービス",
+        "contact": {
+          "title": "お問い合わせ",
+          "email": "メール",
+          "phone": "電話",
+          "address": "住所"
+        }
+      }
     },
     "LocaleLayout": {
       "title": "Arigato のデモ"
     },
     "LocaleSwitcher": {
       "label": "言語を変更",
-      "locale": "{locale, select, ja {🇯🇵} en {🇺🇸} other {不明}}"
+      "locale": "{locale, select, ja {🇯🇵 日本語} en {🇺🇸 英語} other {不明}}"
     },
     "Manifest": {
       "name": "next-intl の例"
     },
     "Navigation": {
       "home": "ホーム",
-      "jayTitle": "ありがとうコーポレーション",
-      "cncTitle": "中古工作機械"
+      "jayTitle": "Jay",
+      "cncTitle": "CNC"
     },
     "NotFoundPage": {
       "description": "ブラウザのアドレスバーを再確認するか、ナビゲーションを使用して既知のページに移動してください。",
@@ -43,6 +93,8 @@
     "Jay": {
         "description": "ありがとうコーポレーション",
         "title": "会社名",
+        "notFound": "このカテゴリーには製品が見つかりません",
+        "addToCart": "カートに追加",
         "labels": {
           "size": "サイズ",
           "availability": "在庫状況",
@@ -71,7 +123,7 @@
       "title": "cnc"
     },
     "Filters": {"items": [
-        { "title": "ジェイ", "path": "jay"},
+        { "title": "Jay", "path": "jay"},
         { "title": "CNC", "path": "cnc"},
         { "title": "カテゴリー 3", "path": "c-3"},
         { "title": "カテゴリー 4", "path": "c-4"},

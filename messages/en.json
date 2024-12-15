@@ -3,23 +3,74 @@
       "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
       "title": "Something went wrong!"
     },
+    
     "IndexPage": {
-      "description": "Welcome to demo site for <code>Arigato</code> with the Next.js App Router.",
-      "title": "Hi"
-    },
+      "title": "Welcome to Arigato Corporation",
+      "description": "Arigato Corporation is a leading tech company specializing in software development, IT solutions, and innovation. We strive to deliver exceptional services and products to businesses worldwide.",
+      "companyInfo": {
+        "name": "Arigato Corporation",
+        "industry": "Technology",
+        "established": "2010",
+        "headquarters": "Tokyo, Japan",
+        "mission": "To innovate and provide cutting-edge IT solutions that empower businesses around the globe.",
+        "services": [
+          "Custom Software Development",
+          "Cloud Solutions",
+          "AI & Machine Learning",
+          "Mobile App Development",
+          "Web Development"
+        ],
+        "team": {
+          "total": 150,
+          "departments": [
+            "Software Engineering",
+            "Business Development",
+            "Sales & Marketing",
+            "Customer Support"
+          ]
+        },
+        "clients": [
+          "Tech Innovations Inc.",
+          "Global Solutions Ltd.",
+          "CyberSec Enterprises",
+          "SmartTech Co."
+        ]
+      },
+      "contact": {
+        "email": "contact@arigatocorp.com",
+        "phone": "+81 3 1234 5678",
+        "address": "Shibuya, Tokyo, Japan"
+      },
+      "labels": {
+        "companyInfo": {
+          "name": "Company Name",
+          "industry": "Industry",
+          "established": "Established",
+          "headquarters": "Headquarters",
+          "mission": "Mission"
+        },
+        "services": "Services",
+        "contact": {
+          "title": "Contact Us",
+          "email": "Email",
+          "phone": "Phone",
+          "address": "Address"
+        }
+      }
+    },    
     "LocaleLayout": {
       "title": "Arigato Demo"
     },
     "LocaleSwitcher": {
       "label": "Change language",
-      "locale": "{locale, select, ja {🇯🇵} en {🇺🇸} other {Unknown}}"
+      "locale": "{locale, select, ja {🇯🇵 Japanese} en {🇺🇸 English} other {Unknown}}"
     },
     "Manifest": {
       "name": "next-intl example"
     },
     "Navigation": {
       "home": "Home",
-      "jayTitle": "ArigatoCorp",
+      "jayTitle": "Jay",
       "cncTitle": "CNC"
     },
     "NotFoundPage": {
@@ -43,6 +94,8 @@
     "Jay": {
       "description": "Arigato Corporation",
       "title": "company name",
+      "notFound": "No products found in this collection",
+      "addToCart": "Add to Cart",
       "labels": {
         "size": "Size",
         "availability": "Availability",

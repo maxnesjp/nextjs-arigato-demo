@@ -1,6 +1,7 @@
 "use client";
 import { ProductDetailsLabelValue } from "@/lib/arigato/types";
 import React, { useState } from "react";
+import ShowMoreButton from "./ShowMoreButton"; // Import the new button component
 
 const ProductDetailsExpansion = ({
   productDetails,
@@ -16,16 +17,13 @@ const ProductDetailsExpansion = ({
           </p>
         ))}
         {!showAll && (
-          <button
-            onClick={() => setShowAll(true)}
-            className="text-blue-600 text-sm mt-2 transition-all duration-300 ease-in-out"
-          >
-            Show more
-          </button>
+          <ShowMoreButton
+            toggleShowAll={() => setShowAll(true)}
+            showAll={showAll}
+          />
         )}
       </div>
 
-      {/* Animated section for showing more details */}
       <div
         className={`space-y-2 col-span-2 overflow-hidden transition-all duration-300 ease-in-out ${
           showAll ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
@@ -37,12 +35,10 @@ const ProductDetailsExpansion = ({
           </p>
         ))}
         {showAll && (
-          <button
-            onClick={() => setShowAll(false)}
-            className="text-blue-600 text-sm mt-2 transition-all duration-300 ease-in-out"
-          >
-            Show less
-          </button>
+          <ShowMoreButton
+            toggleShowAll={() => setShowAll(false)}
+            showAll={showAll}
+          />
         )}
       </div>
     </div>

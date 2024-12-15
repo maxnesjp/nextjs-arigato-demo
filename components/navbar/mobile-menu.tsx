@@ -79,17 +79,17 @@ export default function MobileMenu() {
                 <ul className="flex w-full flex-col">
                   <li className="py-2 text-xl text-black transition-colors hover:text-neutral-500 dark:text-white">
                     <NavigationLink
-                      href="/arigatoCorp"
+                      href="/search/jay"
                       prefetch={true}
                       className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
                       onClick={closeMobileMenu}
                     >
-                      Arigato Corp
+                      Jay
                     </NavigationLink>
                   </li>
                   <li className="py-2 text-xl text-black transition-colors hover:text-neutral-500 dark:text-white">
                     <NavigationLink
-                      href="/cnc"
+                      href="/search/cnc"
                       prefetch={true}
                       className="mr-2 flex w-full items-center justify-center md:w-auto lg:mr-6"
                       onClick={closeMobileMenu}

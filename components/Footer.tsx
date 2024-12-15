@@ -1,10 +1,5 @@
 import { useTranslations } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
 import Link from "next/link";
-
-type Props = {
-  locale: string;
-};
 
 const Footer = () => {
   const t = useTranslations("Footer");

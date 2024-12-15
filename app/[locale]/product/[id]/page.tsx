@@ -1,6 +1,6 @@
-import React, { Suspense, useState } from "react";
+import React, { Suspense } from "react";
 import { notFound } from "next/navigation";
-import { Machinery, ProductDetailsLabelValue } from "@/lib/arigato/types";
+import { Machinery } from "@/lib/arigato/types";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import LoadingPlaceholder from "@/components/LoadingPlaceholder";
@@ -24,6 +24,20 @@ const ProductDetails = async ({ params }: Props) => {
   const product = products.find((item) => item.id === productId);
 
   if (!product) return notFound();
+
+  // const productJsonLd = {
+  //   "@context": "https://schema.org",
+  //   "@type": "Product",
+  //   name: product.title,
+  //   description: product.description,
+  //   image: product.image,
+  //   offers: {
+  //     "@type": "AggregateOffer",
+  //     availability: product.availability
+  //       ? "https://schema.org/InStock"
+  //       : "https://schema.org/OutOfStock",
+  //   },
+  // };
 
   // Detailed description values
   const productDetails = [
@@ -51,32 +65,26 @@ const ProductDetails = async ({ params }: Props) => {
   return (
     <Suspense fallback={<LoadingPlaceholder />}>
       <div className="flex flex-col min-h-screen">
-        <div className="flex-1 p-4 sm:p-6 max-w-4xl mx-auto">
-          <h1 className="text-3xl font-bold mb-4 text-center">
-            {product.title}
-          </h1>
-
-          <div className="flex flex-col md:flex-row items-center justify-between mb-6">
-            {/* Image Section */}
-            <div className="relative w-full md:w-2/3 h-56 sm:h-72 md:h-80 mb-6 md:mb-0">
-              <Image
-                src={product.image}
-                alt={product.title}
-                layout="fill"
-                objectFit="contain"
-                objectPosition="center"
-                className="rounded-lg"
-              />
+        <h1 className="text-3xl font-bold mb-4 text-center">{product.title}</h1>
+        <div className="flex flex-col md:flex-row justify-center items-center p-4 sm:p-6 max-w-4xl mx-auto">
+          <div className="w-full md:w-7/12 flex justify-center items-center">
+            <Image
+              src={product.image}
+              alt={product.title}
+              width={400}
+              height={400}
+            />
+          </div>
+          <div className="w-full md:w-5/12 mt-3 md:mt-0 pl-0 md:pl-6">
+            <p className="text-gray-700 mb-4 text-center sm:text-left">
+              {product.description}
+            </p>
+            <div className="flex justify-center">
+              <button className="bg-slate-300 px-2 py-1 rounded-md text-blue-600 my-3 text-lg">
+                {t("addToCart")}
+              </button>
             </div>
-
-            {/* Product Details Section */}
-            <div className="w-full md:w-1/3 pl-0 md:pl-6">
-              <p className="text-gray-700 mb-4 text-center">
-                {product.description}
-              </p>
-
-              <ProductDetailsExpansion productDetails={productDetails} />
-            </div>
+            <ProductDetailsExpansion productDetails={productDetails} />
           </div>
         </div>
       </div>
